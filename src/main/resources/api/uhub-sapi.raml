@@ -1,0 +1,140 @@
+#%RAML 1.0
+title: uhub-sapi
+version: v1
+baseUri: http://{environment}/covid/{version}/
+baseUriParameters:
+  environment: 
+    description: DEV, TEST, UAT, PROD
+    enum: ["uho-dev-uhub-sapi.us-e2.cloudhub.io","uho-test-uhub-sapi.us-e2.cloudhub.io","uho-uat-uhub-sapi.us-e2.cloudhub.io","uho-prod-uhub-sapi.us-e2.cloudhub.io"]
+
+traits:
+  client-id-header: !include Traits/client-id-header.raml
+  correlation-header: !include Traits/correlation-header.raml
+  transaction-header: !include Traits/transaction-header.raml
+  state-query-params: !include state-query-params.raml
+
+uses:
+  common-data-types: Library/common-data-types.raml
+  uhub-sapi-types: Library/uhub-sapi-types.raml
+  
+
+/cases:
+  post:
+    description: To register covid case
+    is: [client-id-header,correlation-header,transaction-header]
+    body:
+      application/json:
+        type: uhub-sapi-types.uhub-sapi-covid-case-request
+        example: !include examples/covid-case-request.json
+          
+    responses:
+      201:
+        body:
+          application/json:
+            type: uhub-sapi-types.covid-case-response-type
+            example: !include examples/201.json       
+      400:
+        body:
+          application/json:
+            type: common-data-types.errorType
+            example: !include examples/400.json  
+      503:
+        body:
+          application/json:
+            type: common-data-types.errorType
+            example: !include examples/503.json
+      500:
+        body:
+          application/json:
+            type: common-data-types.errorType
+            example: !include examples/500.json
+  put:
+    description: To update covid case
+    is: [client-id-header,correlation-header,transaction-header]
+    body:
+      application/json:
+        type: uhub-sapi-types.uhub-sapi-covid-case-request
+        example: !include examples/covid-case-request.json
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              type: common-data-types.errorType
+              example: !include examples/201.json
+      400:
+        body:
+          application/json:
+            type: common-data-types.errorType
+            example: !include examples/400.json
+      503:
+        body:
+          application/json:
+            type: common-data-types.errorType
+            example: !include examples/503.json
+      500:
+        body:
+          application/json:
+            type: common-data-types.errorType
+            example: !include examples/500.json
+  /{nationID}:
+    get:
+      description: To get covid case by national ID
+      is: [client-id-header,correlation-header,transaction-header]
+      responses:
+        200:
+          body:
+            application/json:
+              type: uhub-sapi-types.get-cases-by-national-id-response-type
+              example: !include examples/get-cases-by-national-id-response.json
+        404:
+          body:
+            application/json:
+              type: common-data-types.errorType
+              example: !include examples/404.json
+        503:
+          body:
+            application/json:
+              type: common-data-types.errorType
+              example: !include examples/503.json
+        500:
+          body:
+            application/json:
+              type: common-data-types.errorType
+              example: !include examples/500.json
+        
+  /reports:
+    get:
+      description: To get covid case reports
+      is: [client-id-header,correlation-header,transaction-header,state-query-params]
+      responses:
+        200:
+          body:
+            application/json:
+              type: uhub-sapi-types.get-reports-response-type
+              example: !include examples/get-reports-response.json     
+        503:
+          body:
+            application/json:
+              type: common-data-types.errorType
+              example: !include examples/503.json
+        500:
+          body:
+            application/json:
+              type: common-data-types.errorType
+              example: !include examples/500.json
+        
+
+
+
+        
+
+  
+        
+             
+
+
+  
+
+
+

@@ -1,0 +1,7 @@
+{
+  "code": 400,
+  "message": "Bad Request",
+  "description": "required key caseType is not found",
+  "dateTime": "2023-09-18T6:00:07",
+  "transactionId": "xyz-pqr"
+}

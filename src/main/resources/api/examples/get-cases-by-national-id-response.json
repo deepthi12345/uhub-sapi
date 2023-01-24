@@ -1,0 +1,38 @@
+[
+                  {
+                    "source": "Hospital2",
+                    "caseType": "Positive",
+                    "firstName": "Roopa",
+                    "lastName": "ABC",
+                    "phone": "9870234578",
+                    "email": "roopa@gmail.com",
+                    "dob": "1998-08-20",
+                    "nationalId": "455-87-0980",
+                    "nationalIdType": "SSN",
+                    "address": {
+                      "streetName": "Ammavarishala",
+                      "city": "Cuddapah",
+                      "state": "AndhraPradesh",
+                      "postal": "516193",
+                      "country": "India"
+                    }
+                  },
+                  {
+                    "source": "Hospital2",
+                    "caseType": "Positive",
+                    "firstName": "Roopa",
+                    "lastName": "ABC",
+                    "phone": "9870234578",
+                    "email": "roopa@gmail.com",
+                    "dob": "1998-08-20",
+                    "nationalId": "455-87-0980",
+                    "nationalIdType": "SSN",
+                    "address": {
+                      "streetName": "Ammavarishala",
+                      "city": "Cuddapah",
+                      "state": "AndhraPradesh",
+                      "postal": "516193",
+                      "country": "India"
+                    }
+                  }
+                ]

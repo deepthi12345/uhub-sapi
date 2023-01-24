@@ -1,0 +1,238 @@
+#%RAML 1.0 Library
+usage: uhub-sapi types
+types:
+  uhub-sapi-covid-case-request:
+    type: object
+    properties:
+      source:
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 70
+        example: "Hospital1"
+      caseType:
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 20
+        example: "Positive"
+      firstName:
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 20
+        example: "Roopa"
+      lastName:
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 20
+        example: "ABC"
+      phone:
+        type: string
+        required: false
+        minLength: 10
+        maxLength: 20
+        example: "9870234578"
+      email:
+        type: string
+        example: "roopa@gmail.com"
+      dob:
+        type: date-only
+        required: false
+        example: 1998-08-20
+      nationalId:
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 20
+        example: "455-87-0980"
+      nationalIdType:
+        type: string
+        required: false
+        minLength: 3
+        maxLength: 20
+        example: "SSN"
+      address:
+        type: object
+        properties:   
+          streetName:
+            type: string
+            required: false
+            minLength: 2
+            maxLength: 40
+            example: "Ammavarishala"
+          city:
+            type: string
+            required: false
+            minLength: 2
+            maxLength: 40
+            example: "Cuddapah"
+          state:
+            type: string
+            required: false
+            minLength: 3
+            maxLength: 40
+            example: "AndhraPradesh"
+          postal:
+            type: string
+            required: false
+            minLength: 1
+            maxLength: 20
+            example: "516193"
+          country:
+            type: string
+            required: false
+            minLength: 2
+            maxLength: 20
+            example: "India"
+  covid-case-response-type:
+    type: object
+    properties:
+      caseID:
+        type: string
+        required: false
+        minLength: 1
+        maxLength: 40
+        example: "670987"
+  get-cases-by-national-id-response-type:
+    type: array
+    items:
+      type: object
+      properties:
+        source:
+          type: string
+          required: false
+          minLength: 1
+          maxLength: 70
+          example: "Hospital1"
+        caseType:
+          type: string
+          required: false
+          minLength: 1
+          maxLength: 20
+          example: "Positive"
+        firstName:
+          type: string
+          required: false
+          minLength: 1
+          maxLength: 20
+          example: "Roopa"
+        lastName:
+          type: string
+          required: false
+          minLength: 1
+          maxLength: 20
+          example: "ABC"
+        phone:
+          type: string
+          required: false
+          minLength: 10
+          maxLength: 20
+          example: "9870234578"
+        email:
+          type: string
+          example: "roopa@gmail.com"
+        dob:
+          type: date-only
+          required: false
+          example: 1998-08-20
+        nationalId:
+          type: string
+          required: false
+          minLength: 1
+          maxLength: 20
+          example: "455-87-0980"
+        nationalIdType:
+          type: string
+          required: false
+          minLength: 3
+          maxLength: 20
+          example: "SSN"
+        address:
+          type: object
+          properties:   
+            streetName:
+              type: string
+              required: false
+              minLength: 2
+              maxLength: 40
+              example: "Ammavarishala"
+            city:
+              type: string
+              required: false
+              minLength: 2
+              maxLength: 40
+              example: "Cuddapah"
+            state:
+              type: string
+              required: false
+              minLength: 3
+              maxLength: 40
+              example: "AndhraPradesh"
+            postal:
+              type: string
+              required: false
+              minLength: 1
+              maxLength: 20
+              example: "516193"
+            country:
+              type: string
+              required: false
+              minLength: 2
+              maxLength: 20
+              example: "India"
+  get-reports-response-type:
+    type: array
+    items:
+      type: object
+      properties:
+        state:
+          type: string
+          example: "Texas"
+        report:
+          type: object
+          properties:
+            total: 
+              type: number
+              example: 679890
+            positive: 
+              type: number
+              example: 67837
+            recovered: 
+              type: number
+              example: 679890
+            death: 
+              type: number
+              example: 679890
+            vaccinated: 
+              type: number
+              example: 679890
+            
+
+
+          
+            
+        
+  
+
+        
+        
+
+
+
+
+
+
+
+
+
+      
+
+        
+
+          
+
+
+
+

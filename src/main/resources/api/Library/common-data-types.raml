@@ -1,0 +1,48 @@
+#%RAML 1.0 Library
+usage: Used for common type across all the domains
+
+types:
+  fieldValidationType:
+    type: object
+    properties:
+      field:
+        type: string
+        description:
+        required: false
+      description:
+        type: string
+        description: Provides the details of the validation error
+        required: false
+
+  errorType:
+    description: Provides details of the error
+    type: object
+    properties:
+      code:
+        type: integer
+        description: To know what of error it is
+        required: false
+      message:
+        type: string
+        description: To know what of error it is
+        required: false
+      description:
+        type: string
+        description: To know the kind of error
+        required: false
+      dateTime:
+        type: string
+        description: To know date and time details of the error
+        required: false
+      transactionId:
+        type: string
+        description: To know the details of the transactionid
+        required: false
+
+
+
+
+
+
+
+    

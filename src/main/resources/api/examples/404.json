@@ -1,0 +1,7 @@
+{
+  "code": 404,
+  "message": "nationalId not found",
+  "description": "The requested nationalId is not found",
+  "dateTime": "1998-07-12T08:07:20",
+  "transactionId": "xyz-pqr"
+}

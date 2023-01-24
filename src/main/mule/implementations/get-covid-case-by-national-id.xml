@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="get:\cases\(nationID):uhub-sapi-config">
+        <ee:transform>
+            <ee:variables>
+                <ee:set-variable variableName="nationID">attributes.uriParams.'nationID'</ee:set-variable>
+            </ee:variables>
+        </ee:transform>
+        <ee:transform>
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+[
+  {
+    source: "Hospital2",
+    caseType: "Positive",
+    firstName: "Roopa",
+    lastName: "ABC",
+    phone: "9870234578",
+    email: "roopa@gmail.com",
+    dob: "1998-08-20",
+    nationalId: "455-87-0980",
+    nationalIdType: "SSN",
+    address: {
+      streetName: "Ammavarishala",
+      city: "Cuddapah",
+      state: "AndhraPradesh",
+      postal: "516193",
+      country: "India"
+    }
+  }, 
+  {
+    source: "Hospital2",
+    caseType: "Positive",
+    firstName: "Roopa",
+    lastName: "ABC",
+    phone: "9870234578",
+    email: "roopa@gmail.com",
+    dob: "1998-08-20",
+    nationalId: "455-87-0980",
+    nationalIdType: "SSN",
+    address: {
+      streetName: "Ammavarishala",
+      city: "Cuddapah",
+      state: "AndhraPradesh",
+      postal: "516193",
+      country: "India"
+    }
+  }
+]]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+    </flow>
+</mule>

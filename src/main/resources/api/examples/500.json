@@ -1,0 +1,7 @@
+{
+  "code": 500,
+  "message": "Internal server error",
+  "description": "There is error in the internal server",
+  "dateTime": "2023-09-18T6:00:07",
+  "transactionId": "xyz-pqr" 
+}
